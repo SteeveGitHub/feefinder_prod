@@ -1,0 +1,18 @@
+
+.logo{
+    /* display: none; */
+}
+
+img.logo-img{
+    /* width: 15rem; */
+    /* display: none; */
+}
+
+@media screen and (max-width: 768px) {
+    .logo{
+        /* display: block; */
+    }
+    img.logo-img {
+        /* width: 15rem; */
+    }
+}

@@ -1,0 +1,103 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5rem auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+}
+
+.modal-content label {
+  color: #333;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+#forfaitFormContainer,
+#horsForfaitFormContainer {
+  display: none;
+}
+
+.consulter-frais-view {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  width: 50rem;
+  min-height: 50rem;
+  justify-content: space-evenly;
+  margin: 0 auto 0 15rem;
+}
+
+.consulter-frais-view h1,
+.consulter-frais-view h2 {
+  font-size: 2rem;
+  width: 100%;
+}
+
+.consulter-frais-view table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  cursor: pointer;
+}
+
+.consulter-frais-view th,
+.consulter-frais-view td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.consulter-frais-view th {
+  background-color: #f2f2f2;
+}
+
+.consulter-frais-view tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.consulter-frais-view tr:hover {
+  background-color: #c7e0f2; /* Couleur de survol */
+}
+
+@media screen and (min-width: 1000px) {
+  .consulter-frais-view {
+    margin: 0 0 0 20rem;
+    width: 75%;
+  }
+}
+
+.allfeestitle {
+  color: #4caf50;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 70px;
+  text-decoration: underline;
+}
+
+.fees {
+  color: #4caf50;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}

@@ -1,0 +1,103 @@
+.modal-content{
+margin: 5rem 0 0 25rem;
+}
+
+.page-content{
+    margin: 25rem 0 0 60rem;
+    margin-right: 15rem;
+}
+
+.page-content button {
+    background-color: #00D47C;
+    color: #FFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 5rem;
+    width: 15rem;
+}
+
+.page-content button:hover {
+    background-color: #00B16A;
+}
+
+.page-content h1 {
+    color: #000000;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
+
+.Selector-button input{
+    background-color: #00D47C;
+    color: #FFF;
+    border: none;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    font-size: 16px;
+    height: 5rem;
+    width: 15rem;
+}
+
+.Selector-button input:hover{
+    background-color: #00B16A;
+}
+
+.modal-content h2 {
+    color: #000000;
+    font-size: 2rem;
+}
+
+.modal-content p {
+    color: #000000;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.selector-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* Couleur de fond du formulaire */
+    padding: 40px;
+    border-radius: 2rem;
+    box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, 0.15);
+    width: 50rem;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25rem;
+}
+
+.selector-container label {
+    color: #000000;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.modal-content input[type=date], 
+.modal-content input[type=number], 
+.modal-content input[type=text], 
+.modal-content textarea {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    background-color: var(--color-component-bg);
+    color: var(--color-text);
+    line-height: 20px;
+    padding: 5px 4px;
+    background-color: #00B16A;
+    border-color: #000000;
+}
+
+.selector-container form input[type=submit]{
+    background-color: #00D47C;
+    border-color: #000000;
+    color: #000000;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.selector-container form input[type=submit]:hover {
+    background-color: #00B16A;
+}

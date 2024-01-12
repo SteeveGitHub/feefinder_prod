@@ -1,0 +1,74 @@
+.employees{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50rem;
+    height: 50rem;
+    margin: 0 auto;
+}
+
+.employees h1{
+    font-size: 2rem;
+}
+
+.employees table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    cursor: pointer;
+}
+
+.employees th, .employees td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.employees th {
+    background-color: #f2f2f2;
+}
+
+.employees tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.employees tr:hover {
+    background-color: #c7e0f2; /* Couleur de survol */
+}
+
+.update-frais-admin{
+    margin-top: 2rem;
+    background-color: #f2f2f2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #333;
+
+}
+
+.update-frais-admin h2{
+    font-size: 2rem;
+}
+#updateFraisForm{
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#updateFraisForm div{
+    border: 1px solid #f9f9f9;
+    color: #333;
+    width: 90%;
+    /* width: 25rem; */
+    display: flex;
+    justify-content: space-between;
+}
+#updateFraisForm div label{
+    color: #333;
+
+}

@@ -1,0 +1,94 @@
+/* Ajoutez ces styles à votre fichier CSS */
+
+body {
+    font-family: 'News Cycle', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .main-inscription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  
+.inscription-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* Couleur de fond du formulaire */
+    padding: 40px;
+    border-radius: 2rem;
+    box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.inscription-container form {
+    background-color: #016556;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45rem;
+    justify-content: space-evenly;
+    border: 1px solid #085239;
+    border-radius: 2rem;
+    padding: 6rem;
+    margin-bottom: 2rem;
+}
+  
+.inscription-container h3 {
+    color: #000000;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+  
+label {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #FFF;
+    text-align: center; /* Ajout de l'alignement horizontal au centre */
+}
+  
+input {
+    border: 1px solid #085239;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    text-align: center; /* Ajout de l'alignement horizontal au centre */
+}
+  
+.inscription-container button {
+    background-color: #016556; /* Couleur du bouton */
+    color: #FFF;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 5rem;
+    width: 15rem;
+}
+  
+.button:hover {
+    background-color: #085239; /* Couleur du bouton au survol */
+}
+  
+.button:focus {
+    outline: none;
+}
+  
+@media screen and (min-width: 1000px) {
+    .inscription-container {
+      width: 40rem;
+    }
+  
+    .button {
+      margin-bottom: 1.5rem;
+      width: 8rem;
+      font-size: 1.5rem;
+    }
+}
+  

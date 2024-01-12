@@ -1,0 +1,400 @@
+
+.burger-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    height: 5rem;
+    width: 0;
+    z-index: 21;
+    transition: 0.2s ease-in-out;
+}
+#burger-icon{
+    z-index: 21;
+}
+
+.nav-links .logo, .nav-links .logo img{
+    padding: 0;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.nav-links .logo:hover, .nav-links .logo img:hover{
+background-color: initial;
+}
+
+
+.burger-container:has(.navbar-open){
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    width: 10rem;
+}
+
+.burger-container .navbar-open{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 19;
+    background-color: #016556;
+    opacity: 1;
+    transition: 0.2s ease-in-out;
+
+}
+
+
+.navbar-closed {
+opacity: 0;
+visibility: hidden;
+position: absolute;
+margin-top: 6rem;
+top: 0;
+left: 0;
+width: 0;
+height: 80%;
+transition: 0.2s ease-in-out;
+
+}
+.navbar-closed .nav-links{
+    opacity: 0;
+    visibility: none;
+width: 0;
+height: 80%;
+transition: 0.2s ease-in-out;
+}
+.navbar-closed .nav-links .logo img{
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+.navbar-closed .nav-links li{
+    opacity: 0;
+    visibility: none;
+}
+.navbar-open .nav-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    opacity: 1;
+    width: 10rem;
+    height: 90%;
+    margin-top: 6rem;
+    list-style: none;
+    position: relative;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    
+}
+.navbar-open .nav-links li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s ease-in-out;
+}
+
+
+.logo-img {
+    width: 15rem;
+}
+
+.nav-links {
+   
+}
+
+.nav-links.show {
+    height: 100%;
+}
+
+.nav-links li {
+    /* margin-right: 20px; */
+    width: 8rem;
+}
+
+.nav-links li:hover a {
+    color: #000;
+    transition: 0.3s ease;
+}
+
+.nav-links a {
+    color: #01C372;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    height: 1.5rem;
+    width: 80%;
+    padding: 10px;
+    margin: 1rem 0;
+}
+
+.nav-links a i {
+    width: 2rem;
+    margin: 0;
+}
+
+.nav-links a:hover {
+    color: #000;
+    background-color: #01C372;
+    border-radius: 5px;
+}
+
+/* Afficher le menu complet sur les écrans larges */
+@media screen and (min-width: 1000px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    #burger-icon{
+        display: none;
+    }
+    .burger-container .navbar-open{
+        background-color: #01C372;
+    }
+
+    .navbar-closed .nav-links .logo img,
+    .navbar-open .nav-links .logo img{
+        width: 10rem;
+        opacity: 1;
+        padding: 1rem 0;
+        visibility: visible;
+    }
+    .navbar-closed .nav-links .logo,
+    .navbar-open .nav-links .logo{
+        padding: 1rem;
+        width: 10rem;
+        opacity: 1;
+        visibility: visible;
+    }
+    .navbar-closed .nav-links .logo:hover,
+    .navbar-open .nav-links .logo:hover{
+        background-color: #fff;
+    }
+
+    .burger-container, .burger-container:has(.navbar-open), .burger-container:has(.navbar-closed){
+        background-color: #01C372;
+        position: fixed;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        height: 100%;
+        width: 15rem;
+        z-index: 21;
+        transition: 0.2s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-closed, .navbar-open{
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        position: fixed;
+        margin-top: 0;
+        top: 0;
+        left: 0;
+        width: 15rem;
+        height: 100%;
+        transition: 0.2s ease-in-out;
+        z-index: 22;
+    }
+
+    .navbar {
+        background-color: #01C372;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 1rem 2rem;
+        overflow: hidden;
+        transition: width 0.5s ease-in-out;
+        width: 15rem;
+    }
+
+    .navbar-closed .nav-links,
+    .navbar-open .nav-links {
+        margin: 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        opacity: 1;
+        padding: 0;
+        visibility: visible;
+        width: 100%;
+        height: 100%;
+        
+    }
+
+    .navbar-closed .nav-links li,
+    .navbar-open .nav-links li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+        width: 14rem;
+    }
+
+    .nav-links a {
+        color: #016556;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        font-size: 2rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        height: 3rem;
+        width: 80%;
+        padding: 10px;
+        margin: 1rem 0;
+    }
+
+    .nav-links a i {
+        width: 4rem;
+        margin: 0;
+    }
+
+    .nav-links a:hover {
+        color: #000;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+}
+
+/* Ajoutez/modifiez selon les besoins */
+#menuBars {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 21;
+    height: 4rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+#menuBars .bar {
+    height: 1px;
+    width: 100%;
+    background-color: #01C372;
+    transition: transform 0.3s ease-in-out;
+}
+
+#menuToggle {
+    display: none;
+}
+
+.menu {
+    --s: 4rem; /* control the size */
+    --c: black; /* the color */
+
+    height: var(--s);
+    aspect-ratio: 1;
+    border: none;
+    padding: 0;
+    border-inline: calc(var(--s)/2) solid #0000;
+    box-sizing: content-box;
+    --_g1: linear-gradient(var(--c) 20%,#0000 0 80%,var(--c) 0)
+    no-repeat content-box border-box;
+    --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000)
+    repeat-y content-box border-box;
+    background:
+            var(--_g2) left  var(--_p,0px) top,
+            var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
+            var(--_g2) right var(--_p,0px) top,
+            var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
+    background-size:
+            20% 80%,
+            40% 100%;
+    position: relative;
+    clip-path: inset(0 25%);
+    -webkit-mask: linear-gradient(90deg,#0000,#000 25% 75%,#0000);
+    cursor: pointer;
+    transition:
+            background-position .3s var(--_s,.3s),
+            clip-path 0s var(--_s,.6s);
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}
+.menu:before,
+.menu:after {
+    content:"";
+    position: absolute;
+    border-radius: var(--s);
+    inset: 40% 0;
+    background: var(--c);
+    transition: transform .3s calc(.3s - var(--_s,.3s));
+}
+
+.menu:checked {
+    clip-path: inset(0);
+    --_p: calc(-1*var(--s));
+    --_s: 0s;
+}
+.menu:checked:before {
+    transform: rotate(45deg);
+}
+.menu:checked:after {
+    transform: rotate(-45deg);
+}
+.menu:focus-visible {
+    clip-path: none;
+    -webkit-mask: none;
+    border: none;
+    outline: 2px solid var(--c);
+    outline-offset: 5px;
+}
+
+.logo-img{
+    width: 5rem;
+}
+
+.navbar-not-opened{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.navbar-opened{
+    width: 15rem;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* Your existing CSS styles */
+
+#menuBars {
+    display: none;
+}
+
+#menuBars img {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.menu:checked + #menuBars img {
+    transform: rotate(90deg);
+}

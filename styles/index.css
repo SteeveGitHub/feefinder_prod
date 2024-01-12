@@ -1,0 +1,15 @@
+@import 'components/navbar.css';
+@import 'components/header.css';
+@import 'components/logo.css';
+@import 'components/login.css';
+@import 'components/inscription.css';
+@import 'components/profile.css';
+@import 'components/global.css';
+@import 'components/admin.css';
+@import 'components/accueil.css';
+@import 'components/modal-frais.css';
+@import 'components/employees.css';
+@import 'components/fiche.css';
+@import 'components/comptable.css';
+@import 'components/detailFrais.css';
+@import 'components/chart.css';

@@ -1,0 +1,21 @@
+.accueilView{
+    display: flex;
+    flex-direction: column ;
+    width: 95%;
+    margin: 2rem auto 0 auto;
+}
+
+#burger-icon{
+    width: 4rem;
+    z-index: 21;
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+}
+
+@media screen and (min-width: 1000px) {
+    .accueilView{
+        margin: 2rem auto 0 15rem;
+    }
+    
+}
