@@ -2,7 +2,9 @@
 session_start();
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
+
     include('../../database.php');
+
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
 
@@ -21,7 +23,9 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $status = $row["status"];
         $_SESSION['user'] = $idUser;
         $_SESSION['status'] = $status;
+
         header('Location: ../../index.php');
+
     } else {
         header('Location: ../../views/connexion/loginView.php?error=2');
     }
