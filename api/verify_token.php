@@ -20,27 +20,20 @@ function verify_token($id, $database)
 {
     $token = extractToken();
 
-    echo "titi";
-
     if (!$token) {
         throw new Exception("User ID or token not provided", 400);
     }
-
-    echo "toto";
 
     $requete = "SELECT * FROM visiteur WHERE id = ? and token = ?";
     $sql = $database->prepare($requete);
     $sql->execute([$id, $token]);
     $utilisateur = $sql->fetch(PDO::FETCH_ASSOC);
 
-    echo "tata";
 
     if ($utilisateur && $utilisateur['token'] == $token) {
-        echo 'tintin';
         $currentTimestamp = time();
         $tokenAge = $currentTimestamp - strtotime($utilisateur['token_timestamp']);
         $time = 7200;  // 1HOUR
-        echo 'yimr'. $tokenAge;
         if ($tokenAge > $time) {
             throw new Exception("Token expired", 401);
         }

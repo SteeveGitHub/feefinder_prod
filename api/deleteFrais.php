@@ -5,9 +5,10 @@ session_start();
 try {
     include('../database.php');
 
-
     $frais_id = $_POST["frais_id"];
     $user_id = $_POST["user_id"];
+
+    if(isset($_POST["frais_id"]) && isset($_POST["user_id"])){
 
     include("./verify_token.php");
     $currentUserId = $_SESSION['user'];
@@ -21,8 +22,10 @@ try {
 
     updateTimeStamp($currentUserId, $dbh);
 
-
     $json = array("status" => 200, 'message' => "Success");
+    } else {
+        $json = array("status" => 400, 'message' => "Error", 'error' => "Missing parameters");
+    }
 } catch (PDOException $e) {
     $json = array("status" => 400, 'message' => "Error", 'error' => $e->getMessage());
 }

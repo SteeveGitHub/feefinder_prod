@@ -30,6 +30,11 @@ function updateTimestamp($database, $id){
 }
 
 try {
+
+    if(!$dbh){
+        throw new Exception("Database connection error", 500);
+    }
+
     $token = extractToken();
     $userId = $_POST['userId'] ?? null;
 
@@ -48,9 +53,11 @@ try {
 
         if ($tokenAge <= 3600) {  // 1HOUR
            
-            $userQuery = $dbh->prepare("SELECT id, numero, adresse, cp, email, cv_car FROM visiteur WHERE id = :id");
+            $userQuery = $dbh->prepare("SELECT * FROM visiteur WHERE id = :id");
             $userQuery->execute(['id' => $userId]);
             $user = $userQuery->fetch();
+
+            unset($user['token'], $user['mdp'], $user['token_timestamp']);
 
             updateTimestamp($dbh, $userId);
 
