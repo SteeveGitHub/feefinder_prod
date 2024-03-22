@@ -15,17 +15,17 @@ try {
     $meal_quantity = $_POST["meal_quantity"];
     $km = $_POST["km"];
     $transport_type = $_POST["transport_type"];
-    $valideComptable = $_POST["valideComptable"];
+    // $valideComptable = $_POST["valideComptable"];
     $montantRestant = $_POST["montantRestant"];
-    $comment = $_POST["comment"];
+    // $comment = $_POST["comment"];
 
     $currentUserId = $_SESSION['user'];
 
     verify_token($currentUserId, $dbh);
 
-    $insertFrais = "INSERT INTO frais (user_id, date_debut, total_night_price, night_quantity, total_meal_price, meal_quantity, km, transport_type, valideComptable, montantRestant, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $insertFrais = "INSERT INTO frais (user_id, date_debut, total_night_price, night_quantity, total_meal_price, meal_quantity, km, transport_type, montantRestant) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $requestFrais = $dbh->prepare($insertFrais);
-    $requestFrais->execute([$user_id, $date_debut, $total_night_price, $night_quantity, $total_meal_price, $meal_quantity, $km, $transport_type, $valideComptable, $montantRestant, $comment]);
+    $requestFrais->execute([$user_id, $date_debut, $total_night_price, $night_quantity, $total_meal_price, $meal_quantity, $km, $transport_type, $montantRestant]);
 
     updateTimeStamp($currentUserId, $dbh);
 

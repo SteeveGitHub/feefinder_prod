@@ -14,7 +14,7 @@ try {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $requete = $dbh->prepare("SELECT id, status, mdp, numero, adresse, cp, email, cv_car FROM visiteur WHERE email = :email");
+        $requete = $dbh->prepare("SELECT id, status, mdp, numero, adresse, cp, email, cv_car, nom, prenom FROM visiteur WHERE email = :email");
         $requete->execute(['email' => $email]);
         $row = $requete->fetch();
 
@@ -30,7 +30,23 @@ try {
                 $_SESSION['user'] = $row["id"];
                 $_SESSION['status'] = $row["status"];
 
-                $json = array('status' => 200, 'id' => $row["id"], 'message' => "SUCCESS", 'token' => $token);
+                // Modification ici pour renvoyer toutes les informations individuellement
+                $json = array(
+                    'status' => 200,
+                    'message' => "SUCCESS",
+                    'token' => $token,
+                    'id' => $row["id"],
+                    'userStatus' => $row["status"], // Renommé pour éviter la confusion avec le status de la réponse
+                    'numero' => $row["numero"],
+                    'adresse' => $row["adresse"],
+                    'cp' => $row["cp"],
+                    'email' => $row["email"],
+                    'cv_car' => $row["cv_car"],
+                    'nom' => $row["nom"],
+                    'prenom' => $row["prenom"],
+
+
+                );
             } else {
                 $json = array('status' => 202, 'message' => "Invalid Credentials");
             }

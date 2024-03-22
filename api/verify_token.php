@@ -47,3 +47,19 @@ function updateTimeStamp($id, $database)
     $updateTokenRequest = $database->prepare("UPDATE visiteur SET token_timestamp = CURRENT_TIMESTAMP WHERE id = ?");
     $updateTokenRequest->execute([$id]);
 }
+
+function verifyTokenAndGetUserId($dbh, $token) {
+    if (!$token) {
+        throw new Exception("Token not provided", 400);
+    }
+
+    $tokenCheck = $dbh->prepare("SELECT id FROM visiteur WHERE token = :token");
+    $tokenCheck->execute(['token' => $token]);
+    $userId = $tokenCheck->fetchColumn();
+
+    if (!$userId) {
+        throw new Exception("Invalid token", 401);
+    }
+
+    return $userId;
+}
