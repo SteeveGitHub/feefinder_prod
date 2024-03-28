@@ -7,6 +7,8 @@ try {
 
     include("./verify_token.php");
 
+    $token = extractToken();
+
     $user_id = $_POST["user_id"];
     $date_debut = $_POST["date_debut"];
     $total_night_price = $_POST["total_night_price"];
